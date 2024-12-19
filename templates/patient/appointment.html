@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="{% static 'css/patient/appointment.css' %}">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{% url 'home:home' %}">
+                    <img src="{% static 'images/logo1.png' %}" alt="Hospital Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'patient:patient-home' %}">Home</a></li>
+                <li><a href="{% url 'patient:patient-appointment' %}">Appointment</a></li>
+                <li><a href="{% url 'medicines:login' %}">Medicines</a></li>
+                <li><a href="/patient/test-reports/">Test Reports</a></li>
+                <li><a href="{% url 'patient:patient-profile' %}">Update Profile</a></li>
+                <li><a href="{% url 'home:feedback' %}">Feedback</a></li>
+                <li><a href="{% url 'patient:patient-logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="welcome-message">
+        <h3>Welcome, {{ patient.name }}!</h3>
+    </div>
+
+    <!-- Main Content: Schedule Appointment -->
+    <main>
+        <div class="schedule-appointment-container">
+            <div class="form-wrapper">
+                <h2 class="form-title">Schedule an Appointment</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    <!-- Patient Info -->
+                    <label for="patient_name">Patient Name:</label>
+                    <input type="text" value="{{ patient.name }}" disabled class="form-control">
+
+                    <label for="phone">Phone:</label>
+                    <input type="text" value="{{ patient.phone }}" disabled class="form-control">
+
+                    <!-- Appointment Form Fields -->
+                    {{ form.as_p }}
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn">Book Appointment</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hospital Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

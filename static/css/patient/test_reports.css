@@ -1,0 +1,133 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    transform: scale(1.1);
+    color: #ffeb3b;
+}
+
+/* Header Styling */
+.patient-header {
+    margin-top: 80px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.patient-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Content Section */
+.content {
+    margin: 2rem auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+.reports-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.report-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.report-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.report-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.report-card p {
+    font-size: 14px;
+    color: #777;
+}
+
+.no-reports {
+    font-size: 18px;
+    color: #777;
+    margin-top: 2rem;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto;
+    width: 100%;
+}
+.welcome-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4CAF50;
+    background-color: red; /* Green color for welcoming */
+}

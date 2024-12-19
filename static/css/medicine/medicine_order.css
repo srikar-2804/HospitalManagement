@@ -1,0 +1,187 @@
+/* General reset for margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Navbar Styling */
+header {
+    background-color: #0c5c6c;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+    color: #ff6347;
+}
+
+/* Logout Button */
+.logout-btn {
+    background-color: #ff6347;
+    padding: 8px 16px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.logout-btn:hover {
+    background-color: #e04e3f;
+}
+
+/* Main Content */
+h1, h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-top: 30px;
+}
+
+/* Search Bar Section */
+.search-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    border: 2px solid #0c5c6c;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #0c5c6c;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #e04e3f;
+}
+
+/* Medicine List */
+#medicine-list {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+}
+
+#medicine-list li {
+    background-color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#medicine-list li button.add-cart-btn {
+    background-color: #0c5c6c;
+    padding: 8px 12px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#medicine-list li button.add-cart-btn:hover {
+    background-color: #e04e3f;
+}
+
+/* Cart Section */
+#cart-list {
+    list-style-type: none;
+    padding: 10px;
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#cart-list li {
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+#cart-list li:last-child {
+    border-bottom: none;
+}
+
+/* Submit Order Button */
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #0c5c6c;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e04e3f;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 15px 0;
+    background-color: #0c5c6c;
+    color: white;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}

@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Home</title>
+   
+    <link rel="stylesheet" href="{% static 'css/home/home1.css' %}">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="{% url 'home:home' %}" class="logo">
+                <img src="{% static 'images/logo1.png' %}" alt="Hospital Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'home:patientinfo' %}">Patient Info</a></li>
+                <li><a href="{% url 'medicines:login' %}">Medicines</a></li>
+                <li><a href="{% url 'home:about' %}">About</a></li>
+                <li><a href="{% url 'home:location' %}">Locations</a></li>
+                <li><a href="{% url 'doctors:doctors-list' %}">Doctors</a></li>
+            </ul>
+        </nav>        
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 style="color:blue">Welcome to HealthyWine Hospital</h1>
+                <p>Providing exceptional healthcare services with compassion and care.</p>
+                <a href="{% url 'home:about' %}" class="btn">Learn More</a>
+            </div>
+        </section>
+    
+        <!-- Doctors Section -->
+        <section class="featured-doctors">
+            <div class="container">
+                <h2>Our Featured Doctors</h2>
+                <div class="doctor-cards">
+                    {% for doctor in doctors %}
+                    <div class="doctor-card">
+                        <img src="{{ doctor.image.url }}" alt="Dr. {{ doctor.name }}" class="doctor-image">
+                        <h3>Dr. {{ doctor.name }}</h3>
+                        <p>{{ doctor.study }}</p>
+                        <p><strong>Experience:</strong> {{ doctor.years_experience }} years</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Hospital Name. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="{% static 'js/home/home1.js' %}"></script>
+</body>
+</html>

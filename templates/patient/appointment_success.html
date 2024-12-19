@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Success</title>
+    <link rel="stylesheet" href="{% static 'css/patient/appointment_success.css' %}">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{% url 'home:home' %}">
+                    <img src="{% static 'images/logo1.png' %}" alt="Hospital Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'patient:patient-home' %}">Home</a></li>
+                <li><a href="{% url 'patient:patient-appointment' %}">Appointment</a></li>
+                <li><a href="{% url 'medicines:login' %}">Medicines</a></li>
+                <li><a href="/patient/test-reports/">Test Reports</a></li>
+                <li><a href="{% url 'patient:patient-profile' %}">Update Profile</a></li>
+                <li><a href="/patient/feedback/">Feedback</a></li>
+                <li><a href="{% url 'patient:patient-logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="welcome-message">
+            {% if patient %}
+                <h3>Welcome, {{ patient.name }}!</h3>
+            {% else %}
+                <p>Patient not found.</p>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- Welcome Patient Name -->
+   
+
+    <!-- Success Message -->
+    <main>
+        <div class="appointment-success-container">
+            <div class="message-wrapper">
+                <h2 class="success-title">Appointment Booked Successfully!</h2>
+                <p>Your appointment has been scheduled successfully. You will receive a confirmation soon.</p>
+                <a href="{% url 'patient:patient-home' %}" class="btn go-home-btn">Go to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hospital Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

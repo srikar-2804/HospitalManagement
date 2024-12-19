@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Locations - Healthy Wine Hospital</title>
+    <link rel="stylesheet" href="{% static 'css/home/location.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="{% url 'home:home' %}" class="logo">
+                <img src="{% static 'images/logo1.png' %}" alt="Hospital Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'home:patientinfo' %}">Patient Info</a></li>
+                <li><a href="{% url 'medicines:login' %}">Medicines</a></li>
+                <li><a href="{% url 'home:about' %}">About</a></li>
+                <li><a href="{% url 'home:location' %}">Locations</a></li>
+                <li><a href="{% url 'doctors:doctors-list' %}">Doctors</a></li>
+            </ul>
+        </nav>        
+    </header>
+
+    <main>
+        <section class="locations">
+            <h1>Our Locations</h1>
+            <p>
+                Healthy Wine Hospital has expanded its services to multiple locations to ensure that you receive world-class healthcare wherever you are. 
+                Each facility is equipped with modern medical technology, expert staff, and a commitment to provide exceptional patient care. Find us at these convenient locations:
+            </p>
+
+            <!-- Location 1 -->
+            <div class="location">
+                <h2>Healthy Wine Hospital - Main Branch</h2>
+                <p>Address: 123 Wellness Street, City Center, Downtown</p>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345096114!2d-122.42132238468186!3d37.77492967975959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858155c5af934b%3A0xb37e34b2d63a3e65!2s123%20Wellness%20Street!5e0!3m2!1sen!2sus!4v1692293202873!5m2!1sen!2sus" 
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- Location 2 -->
+            <div class="location">
+                <h2>Healthy Wine Hospital - East Side</h2>
+                <p>Address: 456 Health Avenue, Eastwood, Suburbs</p>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.830449509611!2d-122.41902268468188!3d37.77453947975959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858155c5ae123f%3A0xb37e12345d63a3e12!2s456%20Health%20Avenue!5e0!3m2!1sen!2sus!4v1692293304567!5m2!1sen!2sus" 
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- Location 3 -->
+            <div class="location">
+                <h2>Healthy Wine Hospital - West End</h2>
+                <p>Address: 789 Care Lane, Westview, Hillside</p>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8392845096115!2d-122.42522288468187!3d37.77892937975959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858155c5af2bcd%3A0xb37e123456d63a4f1!2s789%20Care%20Lane!5e0!3m2!1sen!2sus!4v1692293407568!5m2!1sen!2sus" 
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Healthy Wine Hospital. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

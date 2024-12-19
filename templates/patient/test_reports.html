@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Reports</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/patient/test_reports.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="{% url 'home:home' %}" class="logo">
+            <img src="{% static 'images/logo1.png' %}" alt="Hospital Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="{% url 'patient:patient-home' %}">Home</a></li>
+            <li><a href="{% url 'patient:patient-appointment' %}">Appointment</a></li>
+            <li><a href="{% url 'medicines:login' %}">Medicines</a></li>
+            <li><a href="{% url 'patient:test-reports' %}">Test Reports</a></li>
+            <li><a href="{% url 'patient:patient-profile' %}">Update Profile</a></li>
+            <li><a href="{% url 'home:feedback' %}">Feedback</a></li>
+            <li><a href="{% url 'patient:patient-logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="patient-header">
+        <div class="container">
+            <h1>Test Reports</h1>
+        </div>
+        <div class="welcome-message">
+            {% if patient %}
+                <h3>Welcome, {{ patient.name }}!</h3>
+            {% else %}
+                <p>Patient not found.</p>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- Test Report Section -->
+    <main class="content">
+        {% if reports %}
+            <section class="reports-container">
+                {% for report in reports %}
+                <div class="report-card">
+                    <img src="{{ report.report_image.url }}" alt="{{ report.report_name }}" class="report-image">
+                    <h3>{{ report.report_name }}</h3>
+                    <p>Uploaded on: {{ report.uploaded_at }}</p>
+                </div>
+                {% endfor %}
+            </section>
+        {% else %}
+            <p class="no-reports">No test reports available at this time.</p>
+        {% endif %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hospital Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

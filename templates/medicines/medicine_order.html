@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Order</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/medicine/medicine_order.css' %}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="{% url 'home:home' %}" class="logo">
+                <img src="{% static 'images/logo1.png' %}" alt="Hospital Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="{% url 'medicines:medicine_order' %}">Medicines</a></li>
+                <li><a href="{% url 'medicines:logout' %}" class="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <h1>Welcome, {{ patient.name }}!</h1> <!-- Displaying patient's name -->
+
+    <!-- Search Bar Section -->
+    <div class="search-container">
+        <input type="text" id="search-box" placeholder="Search medicines...">
+        <button id="search-button" class="btn">Search</button>
+    </div>
+
+    <!-- Medicine List -->
+    <h2>Available Medicines</h2>
+    <ul id="medicine-list">
+        {% for medicine in medicines %}
+            <li>
+                {{ medicine.name }} 
+                <button onclick="addToCart('{{ medicine.id }}', '{{ medicine.name }}')" class="add-cart-btn">Add to Cart</button>
+            </li>
+        {% empty %}
+            <li>No medicines available.</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Cart Section -->
+    <h2>Your Cart</h2>
+    <ul id="cart-list"></ul>
+    <button id="submit-order" class="btn submit-btn">Submit Order</button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hospital Name. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let cart = [];
+
+        // Search functionality
+        document.getElementById('search-button').addEventListener('click', function() {
+            let query = document.getElementById('search-box').value;
+            fetch(`/medicines/search/?q=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    let list = document.getElementById('medicine-list');
+                    list.innerHTML = '';
+                    data.forEach(medicine => {
+                        let li = document.createElement('li');
+                        li.innerHTML = `
+                            ${medicine.name}
+                            <button onclick="addToCart('${medicine.id}', '${medicine.name}')" class="add-cart-btn">Add to Cart</button>
+                        `;
+                        list.appendChild(li);
+                    });
+                });
+        });
+
+        // Add to cart functionality
+        function addToCart(id, name) {
+            cart.push({ id, name });
+            updateCart();
+        }
+
+        function updateCart() {
+            let cartList = document.getElementById('cart-list');
+            cartList.innerHTML = '';
+            cart.forEach((item, index) => {
+                let li = document.createElement('li');
+                li.textContent = item.name;
+                cartList.appendChild(li);
+            });
+        }
+
+        // Submit order
+        document.getElementById('submit-order').addEventListener('click', function() {
+    fetch('/medicines/submit_order/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token }}'  // Include CSRF token
+        },
+        body: JSON.stringify({ cart: cart })
+    }).then(response => {
+        // Check if the response status is OK (200)
+        if (response.ok) {
+            return response.json();  // Parse JSON if the response is valid
+        } else {
+            return response.text();  // Return text if not a valid JSON
+        }
+    })
+    .then(data => {
+        if (typeof data === 'object' && data.status === 'success') {
+            alert('Order submitted successfully!');
+            cart = [];  // Clear cart after successful submission
+            updateCart();  // Update cart UI
+        } else {
+            alert('Failed to submit order. Error: ' + (data.message || data));
+        }
+    })
+    .catch(error => {
+        alert('Error: ' + error);
+    });
+});
+
+
+        
+    </script>
+</body>
+</html>

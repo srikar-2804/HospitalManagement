@@ -1,0 +1,181 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Vertically center items */
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.navbar .logo img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    transform: scale(1.1);
+    color: #ffeb3b;
+}
+
+/* Center the login container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    color: #fff;
+}
+
+/* Login form styling */
+.login-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Slightly wider form */
+    text-align: center;
+}
+
+/* Form heading */
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Input fields styling */
+.login-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button */
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Additional Buttons */
+.extra-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.extra-buttons .btn-secondary {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #6c757d;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.extra-buttons .btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Message container styling */
+#message-container {
+    margin-top: 15px;
+}
+
+.message {
+    font-size: 14px;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Success message */
+.message.success {
+    background-color: #28a745;
+}
+
+/* Error message */
+.message.error {
+    background-color: #dc3545;
+}
+
+/* Warning message */
+.message.warning {
+    background-color: #ffc107;
+    color: #000;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}

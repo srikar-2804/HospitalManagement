@@ -1,0 +1,93 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed; /* Fix navbar to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure navbar is on top */
+}
+
+.navbar .logo img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    transform: scale(1.1);
+    color: #ffeb3b;
+}
+
+/* Header Below Navbar */
+.patient-header {
+    margin-top: 80px; /* Push header content below fixed navbar */
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.patient-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Content Section */
+.content {
+    margin: 2rem auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+.hero {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto;
+    width: 100%;
+}

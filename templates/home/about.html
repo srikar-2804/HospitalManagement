@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Healthy Wine Hospital</title>
+    <link rel="stylesheet" href="{% static 'css/home/about.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="{% url 'home:home' %}" class="logo">
+                <img src="{% static 'images/logo1.png' %}" alt="Hospital Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'home:patientinfo' %}">Patient Info</a></li>
+                <li><a href="{% url 'medicines:login' %}">Medicines</a></li>
+                <li><a href="{% url 'home:about' %}">About</a></li>
+                <li><a href="{% url 'home:location' %}">Locations</a></li>
+                <li><a href="{% url 'doctors:doctors-list' %}">Doctors</a></li>
+            </ul>
+        </nav>        
+    </header>
+
+    <main>
+        <section class="about-us">
+            <h1>About Healthy Wine Hospital</h1>
+            <p>
+                Welcome to Healthy Wine Hospital, a beacon of hope and healing in our community. Founded with the vision of delivering unparalleled healthcare services, 
+                Healthy Wine Hospital stands as a trusted institution where compassion meets innovation. Our commitment to patient-centric care drives every aspect of our operations, 
+                from state-of-the-art facilities to a team of highly qualified professionals dedicated to your well-being.
+            </p>
+            <p>
+                At Healthy Wine Hospital, we prioritize not just physical health but also mental and emotional wellness. Our holistic approach to healthcare ensures that 
+                every patient receives comprehensive care tailored to their unique needs. We believe in empowering our patients with knowledge and support, guiding them 
+                toward healthier and happier lives.
+            </p>
+            <p>
+                With over two decades of experience, Healthy Wine Hospital has grown from a modest clinic to a multi-specialty medical institution equipped with cutting-edge technology. 
+                Our facilities include advanced diagnostic centers, world-class operation theaters, and specialized units for critical care. From routine checkups to complex surgeries, 
+                we are equipped to handle every healthcare challenge with precision and expertise.
+            </p>
+            <p>
+                Our team comprises leading doctors, nurses, and paramedics who bring together years of experience and a passion for saving lives. Each member of our staff undergoes 
+                rigorous training and adheres to the highest standards of medical ethics. Together, they work tirelessly to provide seamless and compassionate care to all our patients.
+            </p>
+            <p>
+                Healthy Wine Hospital has also been at the forefront of medical research and education. We actively collaborate with renowned institutions and organizations to stay 
+                ahead in medical advancements. Our focus on continuous learning ensures that we remain equipped to tackle the ever-evolving challenges in healthcare.
+            </p>
+
+            <!-- Space for two images -->
+            <div class="images-section">
+                <img src="{% static 'images/facility.jpg' %}" alt="Hospital Facility" class="about-image">
+                <img src="{% static 'images/about.jpg' %}" alt="Patient Care" class="about-image">
+            </div>
+
+            <p>
+                Our specialties include cardiology, orthopedics, neurology, oncology, pediatrics, and more. Each department is managed by a dedicated team of experts who collaborate 
+                to provide personalized treatment plans. We utilize the latest in medical imaging, robotic surgery, and minimally invasive procedures to ensure optimal outcomes.
+            </p>
+            <p>
+                Community engagement is at the heart of Healthy Wine Hospital. Through health camps, awareness drives, and free medical checkups, we strive to make healthcare 
+                accessible to everyone. We believe in giving back to the community that has supported us through the years.
+            </p>
+            <p>
+                Patient safety and comfort are our top priorities. Our hospital features spacious and hygienic rooms, a serene ambiance, and amenities designed to promote a speedy recovery. 
+                From admission to discharge, we ensure a seamless experience for our patients and their families.
+            </p>
+            <p>
+                Thank you for considering Healthy Wine Hospital as your partner in health. Whether you are visiting us for a routine checkup or a major procedure, rest assured 
+                that you are in safe hands. We look forward to serving you with dedication, compassion, and excellence.
+            </p>
+            <p>
+                For inquiries or appointments, please feel free to contact us. Together, let’s take a step toward a healthier future.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Healthy Wine Hospital. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/patient/home.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="{% url 'home:home' %}" class="logo">
+            <img src="{% static 'images/logo1.png' %}" alt="Hospital Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="{% url 'patient:patient-home' %}">Home</a></li>
+            <li><a href="{% url 'patient:patient-appointment' %}">Appointment</a></li>
+            <li><a href="{% url 'medicines:login' %}">Medicines</a></li>
+            <li><a href="{% url 'patient:test-reports'%}">Test Reports</a></li>
+            <li><a href="{% url 'patient:patient-profile' %}">Update Profile</a></li>
+            <li><a href="{% url 'home:feedback' %}">Feedback</a></li>
+            <li><a href="{% url 'patient:patient-logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Welcome Header -->
+    <header class="patient-header">
+        <div class="container">
+            <h1>Welcome, {{ patient.name }}</h1>
+        </div>
+    
+  </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <section class="hero">
+            <h2>Your personalized dashboard</h2>
+            <p>Access your health information, reports, and more.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hospital Name. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
