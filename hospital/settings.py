@@ -30,7 +30,40 @@ ALLOWED_HOSTS = ['.vercel.app','.row.sh']
 
 
 # Application definition
+# No code was selected, so we will add a new section to improve the code
+# Add a new section for custom settings
+CUSTOM_SETTINGS = {
+    'DEFAULT_PAGINATION': 10,  # Default pagination for lists
+    'DEFAULT_TIME_ZONE': 'UTC',  # Default time zone
+    'DEFAULT_LANGUAGE_CODE': 'en-us',  # Default language code
+}
 
+# Update the TEMPLATES section to include the custom settings
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR, 'templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'hospital.context_processors.custom_settings',  # Add custom settings context processor
+            ],
+        },
+    },
+]
+
+# Add a new context processor for custom settings
+# Create a new file in the hospital app: context_processors.py
+# Add the following code to the new file
+from django.conf import settings
+
+def custom_settings(request):
+    return {'CUSTOM_SETTINGS': settings.CUSTOM_SETTINGS}
+    
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
